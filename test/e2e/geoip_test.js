@@ -23,4 +23,9 @@ Scenario('test something',  ({ I }) => {
     I.amOnPage("/countryName/52.46.64.227");
     I.see("Rate limit exceeded");
 
+    // Visit cache
+    I.amOnPage("/countryName/104.40.147.217");
+    I.see("Netherlands");
+    I.amOnPage("/countryName/52.46.64.223");
+    I.see("France");
 });
