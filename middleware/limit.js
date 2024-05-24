@@ -44,8 +44,8 @@ class LimitMiddleware {
         const obj = this;
 
         const override = async function(argument) {
-            const nowTime = Math.floor(Date.now()/1000);
-            const threshold = nowTime - obj.config.term;
+            const nowTime = Date.now();
+            const threshold = nowTime - obj.config.term*1000;
             while (obj.queue.size > 0 && obj.queue.peek() < threshold) {
                 obj.queue.pop();
             }

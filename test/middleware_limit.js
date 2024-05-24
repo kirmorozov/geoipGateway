@@ -3,14 +3,14 @@ const {Factory} = require("../factory");
 
 
 
-describe('Middleware Cache', () => {
+describe('Middleware Limit test', () => {
     let factory;
 
     beforeEach(() => {
         factory = new Factory();
     });
 
-    it("Create Simple Cache", async () => {
+    it("Check 1 per/second", async () => {
         const config = {
             path: "middleware/limit",
             limit: 1,
@@ -32,10 +32,13 @@ describe('Middleware Cache', () => {
         await instance.process("123")
             .then((result) => {
                 expect(result).to.equal("123");
-                var start = new Date().getTime();
-                while (new Date().getTime() < start + 1)
-                expect(result).to.equal("123");
-                return instance.process("123");
+                var start = Date.now();
+                while (new Date().getTime() < start + 1001) {
+                    // do nothing
+                }
+                return instance.process("124");
+            }).then((result) => {
+                expect(result).to.equal("124");
             });
 
     });
