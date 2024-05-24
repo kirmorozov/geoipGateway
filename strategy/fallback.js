@@ -16,7 +16,7 @@ class FallbackStrategy {
                 console.log(e);
                 this.currentAdapter += 1;
                 this.currentAdapter = this.currentAdapter % this.config.adapters.length;
-                if (startAdapter == this.currentAdapter) {
+                if (startAdapter === this.currentAdapter) {
                     canProcess = false;
                 }
             }

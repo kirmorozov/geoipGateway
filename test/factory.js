@@ -5,7 +5,6 @@ describe('Factory', () => {
     let factory;
 
     beforeEach(() => {
-        const config = {}; // provide any necessary configuration here
         factory = new Factory();
     });
 
