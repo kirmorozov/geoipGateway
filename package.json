@@ -1,0 +1,17 @@
+{
+    "scripts": {
+        "run": "node app.js",
+        "test": "mocha test/*.js",
+        "codeceptjs": "codeceptjs run --steps",
+        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "node-fetch": "^2.7.0"
+    },
+    "devDependencies": {
+        "chai": "^4.4.1",
+        "mocha": "^10.4.0",
+        "nyc": "^15.1.0"
+    }
+}

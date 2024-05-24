@@ -1,0 +1,43 @@
+{
+  "strategy": {
+    "path": "strategy/fallback",
+    "adapters": ["ipapi", "ipapiis"],
+    "middleware": [
+      {
+        "path": "middleware/cache"
+      }
+    ]
+  },
+  "adapters": {
+    "ipapi": {
+      "path": "adapter/ipapi",
+      "middleware": [
+        {
+          "path": "middleware/limit",
+          "limit": 1,
+          "term": 3600
+        }
+      ]
+    },
+    "ipapiis": {
+      "path": "adapter/ipapiis",
+      "middleware": [
+        {
+          "path": "middleware/limit",
+          "limit": 1,
+          "term": 3600
+        }
+      ]
+    },
+    "ipstack": {
+      "path": "adapter/ipstack",
+      "middleware": [
+        {
+          "path": "middleware/limit",
+          "limit": 1,
+          "term": 3600
+        }
+      ]
+    }
+  }
+}
