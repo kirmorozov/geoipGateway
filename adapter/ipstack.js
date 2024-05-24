@@ -14,11 +14,11 @@ class IpstackAdapter {
             }
 
             const jsonData = await response.json();
-            if (!jsonData.location || !jsonData.location.country_name) {
+            if (!jsonData.country_code) {
                 throw new Error('Failed to get country name from provided IP address.');
             }
 
-            return jsonData.location.country_name;
+            return jsonData.country_code;
         } catch (error) {
             console.log(error);
             throw new Error('An error occurred while processing the request.');

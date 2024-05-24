@@ -31,6 +31,7 @@
     },
     "ipstack": {
       "path": "adapter/ipstack",
+      "API_KEY": "API_KEY_FOR_IPSTACK_GEOIP",
       "middleware": [
         {
           "path": "middleware/limit",
