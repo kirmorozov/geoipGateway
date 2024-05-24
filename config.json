@@ -24,8 +24,8 @@
       "middleware": [
         {
           "path": "middleware/limit",
-          "limit": 1,
-          "term": 3600
+          "limit": 2,
+          "term": 1
         }
       ]
     },
