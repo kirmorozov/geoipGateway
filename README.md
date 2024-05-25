@@ -4,9 +4,11 @@ API provides country names for given ip.
 As of now service provides  `/countryName/:ip`
 
 ### How to run
-To run use `node app.js`
+To run use `node app.js` default port is 3000, no SSL at this moment.
 
 ### How to run tests
+Manual test is as simple as `curl http://127.0.0.1:3000/countryName/104.40.147.215`
+
 Mocha Test can be run as `npm test`
 
 End 2 End test for current [config.json](config.json) can be found [test/e2e/geoip_test.js](test/e2e/geoip_test.js).
