@@ -1,4 +1,3 @@
-
 class CacheMiddleware {
     constructor(config) {
         this.storage = {};
@@ -11,7 +10,7 @@ class CacheMiddleware {
             if (argument in obj.storage) {
                 return obj.storage[argument];
             }
-            const result = await originalProcess.call(subject,argument);
+            const result = await originalProcess.call(subject, argument);
             obj.storage[argument] = result;
             return result;
         }

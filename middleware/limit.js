@@ -1,4 +1,3 @@
-
 class Queue {
     constructor() {
         this.tail = undefined;
@@ -33,6 +32,7 @@ class Queue {
         }
     }
 }
+
 class LimitMiddleware {
     constructor(config) {
         this.config = config;
@@ -43,9 +43,9 @@ class LimitMiddleware {
         const originalProcess = subject.process;
         const obj = this;
 
-        const override = async function(argument) {
+        const override = async function (argument) {
             const nowTime = Date.now();
-            const threshold = nowTime - obj.config.term*1000;
+            const threshold = nowTime - obj.config.term * 1000;
             while (obj.queue.size > 0 && obj.queue.peek() < threshold) {
                 obj.queue.pop();
             }

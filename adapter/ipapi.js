@@ -15,7 +15,7 @@ class IpapiAdapter {
             }
 
             const jsonData = await response.json();
-            if (!jsonData.country || ! jsonData.countryCode) {
+            if (!jsonData.country || !jsonData.countryCode) {
                 throw new Error('Failed to get country name from provided IP address.');
             }
 
@@ -27,4 +27,5 @@ class IpapiAdapter {
     };
 
 }
+
 module.exports = {Adapter: IpapiAdapter}

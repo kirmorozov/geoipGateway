@@ -1,4 +1,3 @@
-
 class FirstStrategy {
     constructor(config, adapters) {
         this.currentAdapter = 0;
@@ -10,4 +9,5 @@ class FirstStrategy {
     };
 
 }
+
 module.exports = {Strategy: FirstStrategy}

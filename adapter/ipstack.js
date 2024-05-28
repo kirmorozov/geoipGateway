@@ -4,6 +4,7 @@ class IpstackAdapter {
     constructor(config) {
         this.config = config;
     }
+
     async process(ip) {
         try {
             const url = `https://api.ipstack.com/${ip}?access_key=${this.config.API_KEY}`;
@@ -26,4 +27,5 @@ class IpstackAdapter {
     };
 
 }
+
 module.exports = {Adapter: IpstackAdapter}

@@ -1,4 +1,3 @@
-
 class FallbackStrategy {
     constructor(config, adapters) {
         this.currentAdapter = 0;
@@ -9,7 +8,7 @@ class FallbackStrategy {
     async process(ip) {
         const startAdapter = this.currentAdapter;
         var canProcess = true;
-        while(canProcess) {
+        while (canProcess) {
             try {
                 return await this.adapters[this.config.adapters[this.currentAdapter]].process(ip);
             } catch (e) {
@@ -26,4 +25,5 @@ class FallbackStrategy {
     };
 
 }
+
 module.exports = {Strategy: FallbackStrategy}
