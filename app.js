@@ -27,6 +27,8 @@ const countryNames = require("./countryNames.json");
 app.get('/countryName/:ip', async (req, res) => {
     const ipAddress = req.params.ip;
     try {
+        // Todo: add api address format check to prevent false counts for rate limiter.
+
         const countryCode = await strategy.process(ipAddress);
         if (!(countryCode in countryNames)) {
             throw new Error(`Country code ${countryCode} has not country name defined`);
